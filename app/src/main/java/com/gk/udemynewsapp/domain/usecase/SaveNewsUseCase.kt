@@ -6,5 +6,5 @@ import com.gk.udemynewsapp.domain.repository.NewsRepository
 class SaveNewsUseCase(
     private val repository: NewsRepository
 ) {
-    suspend fun invoke(article: Article) = repository.saveNews(article = article)
+    suspend fun invoke(article: Article):Long = repository.saveNews(article = article)
 }

@@ -27,5 +27,13 @@
         android:id="@+id/infoFragment"
         android:name="com.gk.udemynewsapp.presentation.InfoFragment"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info" >
+
+        <argument
+            android:name="article"
+            app:argType="com.gk.udemynewsapp.data.model.Article" />
+        <action
+            android:id="@+id/action_infoFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
 </navigation>

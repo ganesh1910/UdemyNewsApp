@@ -5,10 +5,18 @@ import com.gk.udemynewsapp.data.model.APIResponse
 import com.gk.udemynewsapp.data.repositpory.dataSource.NewsRemoteDataSource
 import retrofit2.Response
 
-class NewsRemoteDataSourceImpl(
+class NewsRemoteDataSourceImpl (
     private val newsApiService: NewsApiService
 ) : NewsRemoteDataSource {
     override suspend fun getTopHeadlines(country: String,page: Int): Response<APIResponse> {
         return newsApiService.getTopHeadlines(country, page)
+    }
+
+    override suspend fun getSearchedNews(
+        country: String,
+        searchQuery: String,
+        page: Int
+    ): Response<APIResponse> {
+        return newsApiService.getSearchedNews(country = country, searchQuery = searchQuery, page = page)
     }
 }

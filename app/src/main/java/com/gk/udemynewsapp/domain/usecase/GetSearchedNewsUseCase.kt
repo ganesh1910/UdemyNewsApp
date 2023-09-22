@@ -5,9 +5,9 @@ import com.gk.udemynewsapp.data.util.Resource
 import com.gk.udemynewsapp.domain.repository.NewsRepository
 
 class GetSearchedNewsUseCase(
-    private val repository: NewsRepository
+    private val newsRepository: NewsRepository
 ) {
-    suspend fun invoke(searchQuery:String):Resource<APIResponse>{
-        return repository.getSearchedNews(searchQuery = searchQuery)
+    suspend fun invoke(country:String,searchQuery:String,page:Int):Resource<APIResponse>{
+        return newsRepository.getSearchedNews(country = country, searchQuery = searchQuery, page = page)
     }
 }
